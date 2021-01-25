@@ -15,12 +15,30 @@
     {% include 'navbar.html' %}
 
     {% block main %}
-    <h1>
-        How Has Netflix Changed?
-    </h1>
-        <p>
+    <div class = "container=fluid">
+        <div class = "topofpage">
+        <h1>
+            How Has Netflix Changed?
+         </h1>
+             <p>
             Perception is changing in the way we watch movies and TV, and we wanted to see how those changes reflect in our data that we collect. 
-        </p>
+            </p>
+        </div>
+        <div class = questions>
+            <h2>
+                Questions we asked:
+            </h2>
+            <div class = list>
+                <ul>
+                    <li>Which country has the most representation on Netflix? </li>
+                    <li>Which genres (“listed_in”) have the most representation. Which has the least?</li>
+                    <li>Who is winning the war between platform dominance: movies or TV series?</li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
     {% endblock %}
 
     <!-- ...and JavaScript goes here -->
