@@ -11,12 +11,20 @@
     <title>Netflix Viewing habits</title>
 </head>
 <body>
-    {% include 'navbar.html' %}
+
+    <ul id="navigation">
+        {% for item in navigation %}
+        <a href="{{ navbar.html }}"></a>
+        {% endfor %}
+    </ul>
 
     {% block main %}
     <h1>
-        Hello World!
+        How Has Netflix Changed?
     </h1>
+        <p>
+            Perception is changing in the way we watch movies and TV, and we wanted to see how those changes reflect in our data that we collect. 
+        </p>
     {% endblock %}
 
     <!-- ...and JavaScript goes here -->

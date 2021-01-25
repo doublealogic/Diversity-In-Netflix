@@ -10,13 +10,14 @@ app = Flask(__name__,
 def home():
     return render_template('index.html')
 
-@app.route('/viz1')
-def viz1():
-    return render_template('viz1.html')
+@app.route('/bubble')
+def bubble():
+    return render_template('bubble.html')
 
-@app.route('/viz2')
-def viz2():
-    return render_template('viz2.html')
+@app.route('/heatmap')
+def heatmap():
+    return render_template('heatmap.html')
+
 
 
 @app.route('/db_data', methods=['GET'])
