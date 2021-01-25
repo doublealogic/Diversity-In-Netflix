@@ -8,7 +8,7 @@ app = Flask(__name__,
 
 @app.route('/')
 def home():
-    return render_template('base.html')
+    return render_template('index.html')
 
 @app.route('/viz1')
 def viz1():
