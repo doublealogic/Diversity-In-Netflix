@@ -12,11 +12,7 @@
 </head>
 <body>
 
-    <ul id="navigation">
-        {% for item in navigation %}
-        <a href="{{ navbar.html }}"></a>
-        {% endfor %}
-    </ul>
+    {% include 'navbar.html' %}
 
     {% block main %}
     <h1>
