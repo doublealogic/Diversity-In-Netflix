@@ -7,7 +7,7 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
     <title>Netflix Viewing habits</title>
 </head>
 <body>
@@ -24,11 +24,11 @@
             Perception is changing in the way we watch movies and TV, and we wanted to see how those changes reflect in our data that we collect. 
             </p>
         </div>
-        <div class = questions>
+        <div class = "questions">
             <h2>
                 Questions we asked:
             </h2>
-            <div class = list>
+            <div class = "listq">
                 <ul>
                     <li>Which country has the most representation on Netflix? </li>
                     <li>Which genres (“listed_in”) have the most representation. Which has the least?</li>
@@ -37,6 +37,31 @@
                 </ul>
             </div>
 
+        </div>
+        <div class = "datagathering">
+            <h2>
+                Where we acquired data:
+            </h2>
+            <div class = "listd">
+                <ul>
+                    <li> Kaggle dataset Netflix Movies and TV Shows. 
+                        <a class="link" href="https://www.kaggle.com/shivamb/netflix-shows?select=netflix_titles.csv">Click Here</a>
+                        for the website
+                        <p>
+                           This dataset has movies and tv shows available on Netflix as of the end of 2019. The creation of the dataset has similar interest to our project. We used postgres to host the database.
+                        </p>                    
+                    </li>
+
+                    <li> Trakt API
+                        <a class= "link" href= "https://trakt.docs.apiary.io/#"> Click Here</a>
+                        for the website documentation
+                        <p>Trakt api collects data on what TV shows and movies people are watching. We were able to pull data and merge it with our Netflix dataset.  </p>
+                    </li>
+                </ul>
+            </div>
+
+
+        
         </div>
     </div>
     {% endblock %}

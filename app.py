@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify
-# import data
+import data
 
 
 app = Flask(__name__, 
@@ -27,11 +27,11 @@ def heatmap():
 #     return jsonify(data)
 
 
-# @app.route('/api_data', methods=['GET'])
-# def api_data():
-#     # data = data.get_api_data()
-#     data = {"this": "is my api data"}
-#     return jsonify(data)
+@app.route('/api_data', methods=['GET'])
+def api_data():
+    da = data.get_api_data()
+    # data = {"this": "is my api data"}
+    return jsonify(da)
 
 
 if __name__ == '__main__':
