@@ -5,11 +5,12 @@ from config import client_id
 
 def get_db_data():
     # Connect to database
-    
+    pd.fromsql()
 
     # Query data
 
     # Return data in json format
+
     pass
 
 def get_api_data(media_type): 
