@@ -12,7 +12,7 @@ def get_db_data():
     # Return data in json format
     pass
 
-def get_api_data():
+def get_api_data(media_type): 
     # Query to api
     
     http = urllib3.PoolManager()
@@ -21,7 +21,7 @@ def get_api_data():
         'trakt-api-version': '2',
         'trakt-api-key': client_id
     }
-    request = http.request('GET', 'https://api.trakt.tv/movies/watched/yearly?page=1&limit=100', headers=headers)
+    request = http.request('GET', f"https://api.trakt.tv/{media_type}/watched/yearly?page=1&limit=100", headers=headers)
     return json.loads(request.data.decode("utf-8"))
 
     

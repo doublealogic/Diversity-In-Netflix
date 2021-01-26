@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 import data
 
 
@@ -29,7 +29,8 @@ def heatmap():
 
 @app.route('/api_data', methods=['GET'])
 def api_data():
-    da = data.get_api_data()
+    media_type= request.args.get("media", default= "movies", type= str)
+    da = data.get_api_data(media_type)
     # data = {"this": "is my api data"}
     return jsonify(da)
 
