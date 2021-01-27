@@ -25,4 +25,14 @@ def get_api_data(media_type):
     request = http.request('GET', f"https://api.trakt.tv/{media_type}/watched/yearly?page=1&limit=100", headers=headers)
     return json.loads(request.data.decode("utf-8"))
 
+def get_summary_data(media_type, slug): 
+    # Query to api
     
+    http = urllib3.PoolManager()
+    headers = {
+        'Content-Type': 'application/json',
+        'trakt-api-version': '2',
+        'trakt-api-key': client_id
+    }
+    request = http.request('GET', f"https://api.trakt.tv/{media_type}/{slug}?extended=full", headers=headers)
+    return json.loads(request.data.decode("utf-8"))    
