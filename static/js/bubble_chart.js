@@ -71,8 +71,8 @@ function yTextRefresh() {
 // Import Trakt API and IMDB API Data Here
 
 function visualize(apiData) {
-    var selectedXAxis = "poverty";
-    var selectedYAxis = "obesity";
+    var selectedXAxis = "rating";
+    var selectedYAxis = "watched";
 
     var xMin;
     var xMax;
@@ -87,7 +87,7 @@ function visualize(apiData) {
         var theX;
         var theState = "<div>" + d.state + "</div>";
         var theY = "<div>" + selectedYAxis + ": " + d[selectedYAxis] + "%</div>";
-        if (selectedXAxis === "poverty") {
+        if (selectedXAxis === "rating") {
           theX = "<div>" + selectedXAxis + ": " + d[selectedXAxis] + "%</div>";
         }
         else {
@@ -171,9 +171,9 @@ function visualize(apiData) {
       .attr("class", "yAxis")
       .attr("transform", "translate(" + (margin + wordLabelArea) + ", 0)");
   
-    var theCircles = svg.selectAll("g theCircles").data(apiData).enter();
+    var allBubbles = svg.selectAll("g allBubbles").data(apiData).enter();
   
-    theCircles
+    allBubbles
       .append("circle")
       .attr("cx", function(d) {
         return xScale(d[selectedXAxis]);
@@ -199,7 +199,7 @@ function visualize(apiData) {
         d3.select(this).style("stroke", "#e3e3e3");
       });
   
-    theCircles
+    allBubbles
       .append("text")
       .text(function(d) {
         return d.abbr;
