@@ -69,6 +69,9 @@ function yTextRefresh() {
   yTextRefresh();
 
 // Import Trakt API and IMDB API Data Here
+d3.json("http://127.0.0.1:5000/api_data", function(data) {
+  visualize(data)
+});
 
 function visualize(apiData) {
     var selectedXAxis = "rating";
