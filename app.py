@@ -20,11 +20,11 @@ def heatmap():
 
 
 
-# @app.route('/db_data', methods=['GET'])
-# def database_data():
-#     # data = data.get_db_data()
-#     data = {"this": "is my database data"}
-#     return jsonify(data)
+@app.route('/db_data', methods=['GET'])
+def database_data():
+    # data = data.get_db_data()
+    data = {"this": "is my database data"}
+    return jsonify(data)
 
 
 @app.route('/api_data', methods=['GET'])
@@ -34,7 +34,4 @@ def api_data():
     # data = {"this": "is my api data"}
     return jsonify(da)
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
-    
+ 
