@@ -31,9 +31,9 @@
                 <div class = "row align-items-center">
                     <div class= "col align-self-center">
                         <p style= "font-size:x-large;">
-                            The way we watch TV and movies continues to change. The pandemic changed it more dramatically with the closing of somme movie theaters permantely. 
-                            We wanted to see how Netflix was changing their selection based on viewing habits. Do we prefer tv shows over movies? Has Netflix chnaged their 
-                            selection to confimr this? Are we seeing a more diverse selection of media? Does Netflix include more shows and movies produced in other countries 
+                            The way we watch TV and movies continues to change. The pandemic changed it more dramatically with the closing of somme movie theaters permanently. 
+                            We wanted to see how Netflix was changing their selection based on viewing habits. Do we prefer tv shows over movies? Has Netflix changed their 
+                            selection to confirm this? Are we seeing a more diverse selection of media? Does Netflix include more shows and movies produced in other countries 
                             than the United States? These thoughts inspired us to dig a little deeper into the data. Since we all are users of Netflix, we wanted to see what 
                             changes they have made over the last three years.  
                         </p>    
@@ -68,7 +68,7 @@
                     </h2>
                         <div class= "row justify-content-center">
                             <div class = "col align-self-center">
-                                <table>
+                                <table style= "text-align: center;">
                                     <tr>
                                         <th style= "font-size: larger; border-right: 1px solid gray;">
                                             Kaggle dataset Netflix Movies and TV Shows. 
@@ -81,16 +81,20 @@
                                     <tr>
                                         <td style="border-right: 1px solid gray; padding:10pt;">
                                             This dataset has movies and tv shows available on Netflix as of the end of 2019. 
-                                            The creation of the dataset has similar interest to our project. We used postgres 
-                                            to host the database.
+                                            The columns include: show id, Type, title, director, cast, country, date added to
+                                             Netflix, release year, rating, and duration. 
+                                            We used postgres to host the database.
                                         </td>
                                         <td style= "padding:10pt;">
-                                            Trakt api collects data on what TV shows and movies people are watching. We were able to pull data and merge it with our Netflix dataset.
+                                            Trakt api collects data on what TV shows and movies people are watching. We called
+                                            data from the most watched movies database that shows us a watch count, play count, 
+                                            collected count, movie title, year, trakt id, IMDB id, and TMBD id. From the summary 
+                                            database, we called: country, genre, certification, homepage, and translations.
                                         </td>
                                     </tr>
 
                                     <tr>
-                                        <td style="border-right: 1px solid gray">
+                                        <td style="border-right: 1px solid gray;">
                                             <a class="link" href="https://www.kaggle.com/shivamb/netflix-shows?select=netflix_titles.csv">Link to site</a>
                                             
                                         </td>
