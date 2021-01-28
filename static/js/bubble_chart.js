@@ -70,7 +70,7 @@ function yTextRefresh() {
 
 // Import Trakt API and IMDB API Data Here
 
-function visualize(theData) {
+function visualize(apiData) {
     var selectedXAxis = "poverty";
     var selectedYAxis = "obesity";
 
@@ -102,21 +102,21 @@ function visualize(theData) {
     svg.call(toolTip);
   
     function xMinMax() {
-      xMin = d3.min(theData, function(d) {
+      xMin = d3.min(apiData, function(d) {
         return parseFloat(d[selectedXAxis]) * 0.90;
       });
   
-      xMax = d3.max(theData, function(d) {
+      xMax = d3.max(apiData, function(d) {
         return parseFloat(d[selectedXAxis]) * 1.10;
       });
     }
   
     function yMinMax() {
-      yMin = d3.min(theData, function(d) {
+      yMin = d3.min(apiData, function(d) {
         return parseFloat(d[selectedYAxis]) * 0.90;
       });
   
-      yMax = d3.max(theData, function(d) {
+      yMax = d3.max(apiData, function(d) {
         return parseFloat(d[selectedYAxis]) * 1.10;
       });
     }
@@ -138,12 +138,12 @@ function visualize(theData) {
     var xScale = d3
       .scaleLinear()
       .domain([xMin, xMax])
-      .range([margin + labelArea, width - margin]);
+      .range([margin + wordLabelArea, width - margin]);
     var yScale = d3
       .scaleLinear()
       .domain([yMin, yMax])
 
-      .range([height - margin - labelArea, margin]);
+      .range([height - margin - wordLabelArea, margin]);
 
     var xAxis = d3.axisBottom(xScale);
     var yAxis = d3.axisLeft(yScale);
@@ -164,14 +164,14 @@ function visualize(theData) {
       .append("g")
       .call(xAxis)
       .attr("class", "xAxis")
-      .attr("transform", "translate(0," + (height - margin - labelArea) + ")");
+      .attr("transform", "translate(0," + (height - margin - wordLabelArea) + ")");
     svg
       .append("g")
       .call(yAxis)
       .attr("class", "yAxis")
-      .attr("transform", "translate(" + (margin + labelArea) + ", 0)");
+      .attr("transform", "translate(" + (margin + wordLabelArea) + ", 0)");
   
-    var theCircles = svg.selectAll("g theCircles").data(theData).enter();
+    var theCircles = svg.selectAll("g theCircles").data(apiData).enter();
   
     theCircles
       .append("circle")
@@ -181,7 +181,7 @@ function visualize(theData) {
       .attr("cy", function(d) {
         return yScale(d[selectedYAxis]);
       })
-      .attr("r", circRadius)
+      .attr("r", bubbleRadius)
       .attr("class", function(d) {
         return "stateCircle " + d.abbr;
       })
@@ -208,9 +208,9 @@ function visualize(theData) {
         return xScale(d[selectedXAxis]);
       })
       .attr("dy", function(d) {
-        return yScale(d[selectedYAxis]) + circRadius / 2.5;
+        return yScale(d[selectedYAxis]) + bubbleRadius / 2.5;
       })
-      .attr("font-size", circRadius)
+      .attr("font-size", bubbleRadius)
       .attr("class", "stateText")
 
       // Hover Rules
@@ -298,7 +298,7 @@ function visualize(theData) {
               .select(this)
               .transition()
               .attr("dy", function(d) {
-                return yScale(d[selectedYAxis]) + circRadius / 3;
+                return yScale(d[selectedYAxis]) + bubbleRadius / 3;
               })
               .duration(300);
           });
