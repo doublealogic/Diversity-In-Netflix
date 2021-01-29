@@ -3,7 +3,7 @@ import data
 
 
 app = Flask(__name__, 
-            static_folder='static',
+            # static_folder='static',
             template_folder='templates')
 
 @app.route('/')
@@ -20,11 +20,14 @@ def heatmap():
 
 
 
-# @app.route('/db_data', methods=['GET'])
-# def database_data():
-#     # data = data.get_db_data()
-#     data = {"this": "is my database data"}
-#     return jsonify(data)
+@app.route('/db_data', methods=['GET'])
+def database_data():
+    datadf = data.get_db_data()
+   
+    return jsonify(datadf)
+
+
+
 
 
 @app.route('/api_data', methods=['GET'])
@@ -34,6 +37,7 @@ def api_data():
     # data = {"this": "is my api data"}
     return jsonify(da)
 
+<<<<<<< HEAD
 @app.route('/summary_data', methods=['GET'])
 def summary_data():
     media_type= request.args.get("media", default= "movies", type= str)
@@ -45,3 +49,6 @@ def summary_data():
 if __name__ == '__main__':
     app.run(debug=True)
     
+=======
+ 
+>>>>>>> main
