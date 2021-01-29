@@ -1,4 +1,7 @@
 // Creating map object
+
+
+
 var myMap = L.map("map", {
     center: [40.7, -73.95],
     zoom: 3
@@ -21,7 +24,6 @@ var myMap = L.map("map", {
 
 var url = "http://127.0.0.1:5000/db_data"
  
-
 
 //add json data to GEoSon data to generate map
 
