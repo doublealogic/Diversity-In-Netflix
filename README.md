@@ -7,7 +7,7 @@ Project Tasks:
 * With all of these resources, our task was to tell a story with data visualizations.
 * The focus would be on providing users an interactive means to explore data themselves.
 
-
+## Our Proposal
 Here were the questions we asked:
 * Which country has the most representation on Netflix?
 
@@ -15,3 +15,6 @@ Here were the questions we asked:
 
 * Who is winning the war between platform dominance: movies or TV series?
 
+## Respository Directory
+
+## Data Analysis
