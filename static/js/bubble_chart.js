@@ -57,6 +57,31 @@ function xTextRefresh() {
 }
 xTextRefresh();
 
+xText
+  .append("text")
+  .attr("y", -26)
+  .attr("data-name", "rating")
+  .attr("data-axis", "x")
+  .attr("class", "aText active x")
+  .text("Rating 0-10");
+
+xText
+  .append("text")
+  .attr("y", 0)
+  .attr("data-name", "runtime")
+  .attr("data-axis", "x")
+  .attr("class", "aText inactive x")
+  .text("Runtime (minutes)");
+
+
+xText
+  .append("text")
+  .attr("y", 26)
+  .attr("data-name", "playcount")
+  .attr("data-axis", "x")
+  .attr("class", "aText inactive x")
+  .text("Play Count");
+
 let leftTxtX = margin + txtPadBottom;
 let leftTxtY = (height + wordLabelArea) / 2 - wordLabelArea;
 
@@ -88,7 +113,7 @@ function visualize(apiData) {
       .offset([40, -60])
       .html(function(d) {
         var theX;
-        var theState = "<div>" + d.state + "</div>";
+        var theMedia = "<div>" + d.title + "</div>";
         var theY = "<div>" + selectedYAxis + ": " + d[selectedYAxis] + "%</div>";
         if (selectedXAxis === "rating") {
           theX = "<div>" + selectedXAxis + ": " + d[selectedXAxis] + "%</div>";
@@ -100,7 +125,7 @@ function visualize(apiData) {
             parseFloat(d[selectedXAxis]).toLocaleString("en") +
             "</div>";
         }
-        return theState + theX + theY;
+        return theMedia + theX + theY;
       });
     svg.call(toolTip);
   
@@ -186,13 +211,13 @@ function visualize(apiData) {
       })
       .attr("r", bubbleRadius)
       .attr("class", function(d) {
-        return "stateCircle " + d.abbr;
+        return "bubbleCircle " + d.abbr;
       })
       // Hover rules
       .on("mouseover", function(d) {
         // Show the tooltip
         toolTip.show(d, this);
-        // Highlight the state circle's border
+        // Highlight the bubble circle's border
         d3.select(this).style("stroke", "#323232");
       })
       .on("mouseout", function(d) {
@@ -214,7 +239,7 @@ function visualize(apiData) {
         return yScale(d[selectedYAxis]) + bubbleRadius / 2.5;
       })
       .attr("font-size", bubbleRadius)
-      .attr("class", "stateText")
+      .attr("class", "bubbleText")
 
       // Hover Rules
       .on("mouseover", function(d) {
@@ -260,7 +285,7 @@ function visualize(apiData) {
               .duration(300);
           });
   
-          d3.selectAll(".stateText").each(function() {
+          d3.selectAll(".bubbleText").each(function() {
             d3
               .select(this)
               .transition()
@@ -296,7 +321,7 @@ function visualize(apiData) {
               .duration(300);
           });
   
-          d3.selectAll(".stateText").each(function() {
+          d3.selectAll(".bubbleText").each(function() {
             d3
               .select(this)
               .transition()
@@ -354,7 +379,7 @@ function visualize(apiData) {
         });
   
       d3
-        .selectAll(".stateText")
+        .selectAll(".bubbleText")
         .attr("dy", function(d) {
           return yScale(d[selectedYAxis]) + bubbleRadius / 3;
         })
