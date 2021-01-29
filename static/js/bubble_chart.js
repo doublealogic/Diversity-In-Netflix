@@ -93,6 +93,32 @@ function yTextRefresh() {
   }
   yTextRefresh();
 
+yText
+  .append("text")
+  .attr("y", -26)
+  .attr("data-name", "watched")
+  .attr("data-axis", "y")
+  .attr("class", "aText active y")
+  .text("Most Watched (Unique Users)");
+
+// 2. Smokes
+yText
+  .append("text")
+  .attr("x", 0)
+  .attr("data-name", "collected")
+  .attr("data-axis", "y")
+  .attr("class", "aText inactive y")
+  .text("Most Collected (Unique Users)");
+
+// 3. Lacks Healthcare
+yText
+  .append("text")
+  .attr("y", 26)
+  .attr("data-name", "played")
+  .attr("data-axis", "y")
+  .attr("class", "aText inactive y")
+  .text("Play Count");
+
 // Import Trakt API and IMDB API Data Here
 d3.json("http://127.0.0.1:5000/api_data", function(data) {
   visualize(data)
