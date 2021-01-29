@@ -77,7 +77,7 @@ xText
 xText
   .append("text")
   .attr("y", 26)
-  .attr("data-name", "playcount")
+  .attr("data-name", "play_count")
   .attr("data-axis", "x")
   .attr("class", "aText inactive x")
   .text("Play Count");
@@ -96,7 +96,7 @@ function yTextRefresh() {
 yText
   .append("text")
   .attr("y", -26)
-  .attr("data-name", "watched")
+  .attr("data-name", "watcher_count")
   .attr("data-axis", "y")
   .attr("class", "aText active y")
   .text("Most Watched (Unique Users)");
@@ -105,7 +105,7 @@ yText
 yText
   .append("text")
   .attr("x", 0)
-  .attr("data-name", "collected")
+  .attr("data-name", "collected_count")
   .attr("data-axis", "y")
   .attr("class", "aText inactive y")
   .text("Most Collected (Unique Users)");
@@ -114,7 +114,7 @@ yText
 yText
   .append("text")
   .attr("y", 26)
-  .attr("data-name", "played")
+  .attr("data-name", "play_count")
   .attr("data-axis", "y")
   .attr("class", "aText inactive y")
   .text("Play Count");
@@ -126,7 +126,7 @@ d3.json("http://127.0.0.1:5000/api_data", function(data) {
 
 function visualize(apiData) {
     var selectedXAxis = "rating";
-    var selectedYAxis = "watched";
+    var selectedYAxis = "watcher_count";
 
     var xMin;
     var xMax;
@@ -140,9 +140,9 @@ function visualize(apiData) {
       .html(function(d) {
         var theX;
         var theMedia = "<div>" + d.title + "</div>";
-        var theY = "<div>" + selectedYAxis + ": " + d[selectedYAxis] + "%</div>";
+        var theY = "<div>" + selectedYAxis + ": " + d[selectedYAxis] + "</div>";
         if (selectedXAxis === "rating") {
-          theX = "<div>" + selectedXAxis + ": " + d[selectedXAxis] + "%</div>";
+          theX = "<div>" + selectedXAxis + ": " + d[selectedXAxis] + "/10</div>";
         }
         else {
           theX = "<div>" +
