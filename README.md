@@ -2,6 +2,8 @@
 
 ## Background and Project Overview
 This repository focuses on a data ecosystem where we combined a Python Flask-powered API, HTML/CSS, JavaScript and at least one database, in our case SQL.
+
+Project Tasks: 
 * With all of these resources, our task was to tell a story with data visualizations.
 * The focus would be on providing users an interactive means to explore data themselves.
 
