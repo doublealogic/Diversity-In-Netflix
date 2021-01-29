@@ -3,7 +3,7 @@ import data
 
 
 app = Flask(__name__, 
-            static_folder='static',
+            # static_folder='static',
             template_folder='templates')
 
 @app.route('/')
@@ -22,9 +22,12 @@ def heatmap():
 
 @app.route('/db_data', methods=['GET'])
 def database_data():
-    # data = data.get_db_data()
-    data = {"this": "is my database data"}
-    return jsonify(data)
+    datadf = data.get_db_data()
+   
+    return jsonify(datadf)
+
+
+
 
 
 @app.route('/api_data', methods=['GET'])

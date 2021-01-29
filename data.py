@@ -5,13 +5,14 @@ from config import client_id
 
 def get_db_data():
     # Connect to database
-    pd.fromsql()
-
+    uri='postgresql://postgres:postgres@localhost/Project2_GroupF'
+    df = pd.read_sql_table('combined', uri)  
+    print(df) 
     # Query data
 
     # Return data in json format
 
-    pass
+    return df.to_dict('index')
 
 def get_api_data(media_type): 
     # Query to api
