@@ -1,6 +1,6 @@
 // Creating map object
 
-
+// var container = L.DomUtil.get('map'); if(container != null){ container._leaflet_id = null; }
 
 var myMap = L.map("map", {
     center: [40.7, -73.95],
@@ -12,7 +12,7 @@ var myMap = L.map("map", {
   // Adding tile layer to the map
   L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-    tileSize: 512,
+    tileSize: 400,
     maxZoom: 18,
     zoomOffset: -1,
     id: "mapbox/streets-v11",
@@ -27,7 +27,7 @@ var url = "http://127.0.0.1:5000/db_data"
 
 //add json data to GEoSon data to generate map
 
-d3.json(url) .then(function(response) {
+new Promise(x => d3.json(url)).then(function(response) {
 
 
   console.log(response);

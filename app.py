@@ -37,7 +37,6 @@ def api_data():
     # data = {"this": "is my api data"}
     return jsonify(da)
 
-<<<<<<< HEAD
 @app.route('/summary_data', methods=['GET'])
 def summary_data():
     media_type= request.args.get("media", default= "movies", type= str)
@@ -49,6 +48,3 @@ def summary_data():
 if __name__ == '__main__':
     app.run(debug=True)
     
-=======
- 
->>>>>>> main

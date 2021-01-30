@@ -6,7 +6,7 @@ from config import client_id
 def get_db_data():
     # Connect to database
     uri='postgresql://postgres:postgres@localhost/Project2_GroupF'
-    df = pd.read_sql_table('combined', uri)  
+    df = pd.read_sql_table('combinedcount', uri)  
     print(df) 
     # Query data
 
