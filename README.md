@@ -25,9 +25,5 @@ With the above in mind, we wanted to explore what Neflix was offering currently 
 ## Data Resources
 To help parse this information, we used several datasets to help us piece together our analysis:
 * Dataset #1 - https://www.kaggle.com/shivamb/netflix-shows?select=netflix_titles.csv (You can find its corresponding csv [`here`](NetflixKaggle.csv)
-* Dataset #2 - 
+* Dataset #2 - https://www.kaggle.com/ruchi798/movies-on-netflix-prime-video-hulu-and-disney
 * Trakt API - https://trakt.docs.apiary.io/ 
-
-## Respository Directory
-
-## Data Analysis
