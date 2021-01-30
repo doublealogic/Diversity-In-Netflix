@@ -23,7 +23,10 @@ With the above in mind, we wanted to explore what Neflix was offering currently 
 * Who is winning the war between platform dominance: movies or TV series?
 
 ## Data Resources
-To help parse this information, we used several datasets to help us piece together our analysis. 
+To help parse this information, we used several datasets to help us piece together our analysis:
+* Dataset #1 - https://www.kaggle.com/shivamb/netflix-shows?select=netflix_titles.csv (You can find its corresponding csv [`here`](NetflixKaggle.csv)
+* Dataset #2 - 
+* Trakt API - https://trakt.docs.apiary.io/ 
 
 ## Respository Directory
 
