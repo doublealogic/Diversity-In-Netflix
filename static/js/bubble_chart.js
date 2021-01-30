@@ -82,6 +82,10 @@ xText
   .attr("class", "aText inactive x")
   .text("Play Count");
 
+svg.append("g").attr("class", "yText");
+
+var yText = d3.select(".yText");
+
 let leftTxtX = margin + txtPadBottom;
 let leftTxtY = (height + wordLabelArea) / 2 - wordLabelArea;
 
